@@ -271,33 +271,3 @@ class CC2531:
                 self.dev.write(CC2531.USB_EP4_OUT, packet[64:], 100)
             time.sleep(delay)
 
-
-
-
-"""
-dev = usb.core.find(idVendor=0x0451, idProduct=0x16A8)
-if dev is None:
-    raise ValueError('Device not found')
-
-driver = CC2531(dev, None)
-
-beacon="\x03\x08\x00\xff\xff\xff\xff\x07"
-identify="\x21\xcc\x42\xff\xff\x22\x92\x15\xfe\xff\x5e\xcf\xd0\x33\xd6\x77\x88\x25\xfe\xff\x6f\x0d\x00\x0b\x00\x03\x00\x10\x5e\xc0\x11\x04\x06\x38\x82\x80\xcf"
-
-identify2="\x21\xcc\x42\xff\xff\x22\x92\x15\xfe\xff\x5e\xcf\xd0\x33\xd6\x77\x88\x25\xfe\xff\x6f\x0d\x00\x0b\x00\x03\x00"
-
-channel=13
-print(len(identify))
-
-packet="\x01"
-
-for a in range(35):
-    packet= packet+"\x00"
-packet= packet+"\x01"
-
-print(len(packet))
-driver.set_channel(channel)
-driver.inject(identify)
-"""
-
-
